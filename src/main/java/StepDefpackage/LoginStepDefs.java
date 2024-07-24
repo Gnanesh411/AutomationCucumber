@@ -22,6 +22,7 @@ public class LoginStepDefs {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();
+		System.out.println("browser opened....");
 	}
 
 	@When("User enter username {string}")
@@ -30,6 +31,7 @@ public class LoginStepDefs {
 		lg = new LoginObjs(driver);
 		lg.enterUname(uname);
 
+		System.out.println("browser opened....");
 	}
 
 	@When("User enter password {string}")
@@ -37,6 +39,7 @@ public class LoginStepDefs {
 
 		lg = new LoginObjs(driver);
 		lg.enterPassword(pass);
+		System.out.println("browser opened....");
 	}
 
 	@When("User clicks on Login button")
@@ -44,10 +47,12 @@ public class LoginStepDefs {
 
 		lg = new LoginObjs(driver);
 		lg.clickOnLoginButton();
+		System.out.println("browser opened....");
 	}
 
 	@Then("User should get successfully logged in")
 	public void user_should_get_successfully_logged_in() {
 		Assert.assertTrue(lg.validateUserName());
+		System.out.println("browser opened....");
 	}
 }
